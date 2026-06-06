@@ -18,9 +18,12 @@
     "google-auth-library": "^10.6.2",
     "http-status": "^2.1.0",
     "http-status-codes": "^2.3.0",
+    "ioredis": "^5.11.1",
+    "jsonwebtoken": "^9.0.3",
     "jwt-decode": "^4.0.0",
     "mysql2": "^3.22.4",
-    "sequelize": "^6.37.8"
+    "sequelize": "^6.37.8",
+    "uuid": "^14.0.0"
   },
   "devDependencies": {
     "sequelize-cli": "^6.6.5"

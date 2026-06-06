@@ -6,7 +6,7 @@ const API_BASE = 'http://localhost:3000/api/v1';
 
 function App() {
   const [screen, setScreen] = useState('login');
-  const [newUser, setNewUser] = useState({ sub: '', email: '', username: '' });
+  const [newUser, setNewUser] = useState({ pendingToken:'', username: '' });
   const [existingUser, setExistingUser] = useState(null);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -21,7 +21,7 @@ function App() {
         const data = response.data;
 
         if (data.isNewUser) {
-          setNewUser({ sub: data.sub, email: data.email, username: '' });
+          setNewUser({pendingToken:data.pendingToken, username: '' });
           setScreen('new-user');
           return;
         }
@@ -56,8 +56,7 @@ function App() {
 
     try {
       const response = await axios.post(`${API_BASE}/auth/google/confirm`, {
-        sub: newUser.sub,
-        email: newUser.email,
+        pendingToken:newUser.pendingToken,
         username: newUser.username.trim(),
       });
 
@@ -72,7 +71,7 @@ function App() {
 
   const handleRestart = () => {
     setScreen('login');
-    setNewUser({ sub: '', email: '', username: '' });
+    setNewUser({pendingToken:'', username: '' });
     setExistingUser(null);
     setError('');
   };

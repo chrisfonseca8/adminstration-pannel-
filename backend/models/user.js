@@ -6,6 +6,15 @@ export default (sequelize, DataTypes) => {
     class User extends Model {
         static associate(models) {
             // define association here
+            // this.hasMany(models.Room, {
+            //     foreignKey: 'admin',
+            //     onUpdate: 'CASCADE'
+            // })
+
+            // this.hasMany(models.Room_details, {
+            //     foreignKey: 'user_id',
+            //     onDelete: 'CASCADE'
+            // })
         }
     }
 
