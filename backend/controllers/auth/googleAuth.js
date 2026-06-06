@@ -1,9 +1,19 @@
 import ExpressError from '../../utils/errorHandling/expressError.js'
 import { StatusCodes } from 'http-status-codes'
-import {jwtDecode} from 'jwt-decode'
+import { jwtDecode } from 'jwt-decode'
 import db from '../../models/index.js';
 import { where } from 'sequelize';
-const { User } = db
+// import dotenv from "dotenv";
+// dotenv.config({
+//     path: '../../.env'
+// });
+// console.log(process.env.JWT_SECRET);
+// console.log(process.cwd());
+import jwt from 'jsonwebtoken'
+const { User } = db;
+import services from '../../services/index.js'
+const {session} = services
+const { Store_SessionId_To_Cookie, Store_SessionId_to_redis } = session
 
 const getting_google_token = async (code) => {
     try {
@@ -110,28 +120,49 @@ const main_auth_fn = async (req, res, next) => {
     const response = await check_db_sub(result.sub);
 
     if (response === null) {
+        const pendingToken = jwt.sign(
+            { sub: result.sub, email: result.email },
+            process.env.JWT_SECRET,
+            { expiresIn: '10m' }
+        )
+
         return res.status(StatusCodes.OK).json({
             isNewUser: true,
             email: result.email,
-            sub: result.sub
-        });
+            pendingToken
+        })
     }
+
+    const sessionId = await Store_SessionId_To_Cookie(res);
+    // console.log(`sessionId:${sessionId}`);
+    // console.log(`response:${response}`);
+    // console.log(`user_id:${response.id}`)
+    await Store_SessionId_to_redis(sessionId, response.id, true);
 
     return res.status(StatusCodes.OK).json({
         isNewUser: false,
-        user: response.toJSON()
+        user: { username: response.username, email: response.email }
     });
 }
 
 const confirm_new_user = async (req, res, next) => {
-    const { sub, email, username } = req.body;
+    const { username, pendingToken } = req.body;
 
-    if (!sub || !email || !username) {
+    if (!pendingToken || !username) {
         throw new ExpressError(
-            'sub, email, and username are required',
+            'jwt token, and username are required',
             StatusCodes.BAD_REQUEST
         );
     }
+
+    let decoded;
+    try {
+        decoded = jwt.verify(pendingToken, process.env.JWT_SECRET);
+    } catch (e) {
+        throw new ExpressError('Invalid or expired registration token', StatusCodes.UNAUTHORIZED);
+    }
+
+    const { email, sub } = decoded
 
     const existingUser = await User.findOne({
         where: { sub }
@@ -164,9 +195,13 @@ const confirm_new_user = async (req, res, next) => {
         joined_rooms: 0,
     });
 
+    const sessionId = Store_SessionId_To_Cookie(res);
+
+    await Store_SessionId_to_redis(sessionId, createdUser.id, false)
+
     return res.status(StatusCodes.CREATED).json({
         isNewUser: false,
-        user: createdUser.toJSON(),
+        user: { email: createdUser.email, username: createdUser.username },
         created: true
     });
 }
