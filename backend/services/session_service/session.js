@@ -10,24 +10,30 @@ import { where } from "sequelize";
 import { roomRoles } from '../../utils/common/roles.js'
 import redis from "../../src/config/redis.js";
 import { json } from "express";
+import { TTL } from "../../utils/common/extra.js";
+//import {TTL} from '../../utils/common/extra.js'
 const { JOINED, ADMIN } = roomRoles
 //import room_details from "../../models/room_details.js";
 const { Room_details, Room } = db
 
 //uuidv4(); // ⇨ 'ab16e731-6cee-424d-81a0-5929e9bdb0cc'
 
-const Store_SessionId_To_Cookie = async (res) => {
+const Store_SessionId_To_Cookie = async (res, req) => {
     const uniqueSessionId = uuidv4();
 
     try {
+        const oldSessionId = req.cookies.Host_session;
+        if (oldSessionId) {
+            //const user_id = JSON.parse(await redis(`sessionId:${oldSessionId}`)).user_id;
+            await redis.del(`sessionId:${oldSessionId}`);
+        }
         await res.cookie("Host_session", uniqueSessionId, {
             httpOnly: true,
-            secure: true,
+            secure: process.env.NODE_ENV === 'production',
             sameSite: "lax",
             path: '/',
-            maxAge: 7 * 24 * 60 * 60 * 1000
+            maxAge: TTL * 1000
         });
-        //console.log(`uniqueSessionId create in cookie`)
         return uniqueSessionId;
     } catch (error) {
         throw new ExpressError(
@@ -35,7 +41,6 @@ const Store_SessionId_To_Cookie = async (res) => {
             StatusCodes.CONFLICT
         )
     }
-
 }
 
 const check_db_roomdetails = async (user_id) => {
@@ -75,43 +80,57 @@ const check_db_roomdetails = async (user_id) => {
     }
 
 }
-// once we check the db for user exist or not 
-// we can get details about joined and admin rooms and store in the reddis
-const Store_SessionId_to_redis = async (sessionId, user_id, exist) => {
-    const AdminArray = [];
-    const JoinedArray = [];
-    //console.log(`user_id got in Store_SessionId_to_redis is ${user_id}`)
-    if (exist===true) {
-        const resultArray = await check_db_roomdetails(user_id);
-        for (const obj of resultArray) {
-            if (obj.role == ADMIN) {
-                AdminArray.push({
-                    room_id: obj.room_id,
-                    room_name: obj.Room.name
-                });
-            } else {
-                JoinedArray.push({
-                    room_id: obj.room_id,
-                    room_name: obj.Room.name
-                });
-            }
+const rebuildSession = async (user_id) => {
+    const resultArray = await check_db_roomdetails(user_id);
+    const adminRooms = [];
+    const joinedRooms = [];
+
+    for (const obj of resultArray) {
+        if (!obj.Room) continue;
+
+        const roomData = {
+            room_id: obj.Room.id,
+            room_name: obj.Room.name
+        };
+
+        if (obj.role === ADMIN) {
+            adminRooms.push(roomData);
+        } else {
+            joinedRooms.push(roomData);
         }
     }
 
-    const customObj = {
-        "user_id":user_id,
-        "admin_rooms":AdminArray,
-        "joined_rooms":JoinedArray
-    }
+    return {
+        user_id,
+        admin_rooms: adminRooms,
+        joined_rooms: joinedRooms
+    };
+};
+
+// once we check the db for user exist or not 
+// we can get details about joined and admin rooms and store in the reddis
+const Store_SessionId_to_redis = async (sessionId, user_id, exist) => {
+    const customObj = await rebuildSession(user_id);
 
     await redis.set(
         `sessionId:${sessionId}`,
-        JSON.stringify(customObj)
-    )
+        JSON.stringify(customObj),
+        "EX",
+        TTL
+    );
 
-}
+    await userId_sessionID_redis(user_id, sessionId);
+};
+
+export const userId_sessionID_redis = async (user_id, SessionId) => {
+    await redis.set(`userId:${user_id}`, SessionId, 'EX', TTL);
+};
+
+export { rebuildSession };
 
 export default {
     Store_SessionId_To_Cookie,
-    Store_SessionId_to_redis
+    Store_SessionId_to_redis,
+    userId_sessionID_redis,
+    rebuildSession
 }

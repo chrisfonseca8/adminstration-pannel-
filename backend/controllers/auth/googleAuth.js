@@ -12,8 +12,8 @@ import { where } from 'sequelize';
 import jwt from 'jsonwebtoken'
 const { User } = db;
 import services from '../../services/index.js'
-const {session} = services
-const { Store_SessionId_To_Cookie, Store_SessionId_to_redis } = session
+const { session } = services
+const { Store_SessionId_To_Cookie, Store_SessionId_to_redis,userId_sessionID_redis } = session
 
 const getting_google_token = async (code) => {
     try {
@@ -133,11 +133,12 @@ const main_auth_fn = async (req, res, next) => {
         })
     }
 
-    const sessionId = await Store_SessionId_To_Cookie(res);
+    const sessionId = await Store_SessionId_To_Cookie(res,req);
     // console.log(`sessionId:${sessionId}`);
     // console.log(`response:${response}`);
     // console.log(`user_id:${response.id}`)
     await Store_SessionId_to_redis(sessionId, response.id, true);
+    await userId_sessionID_redis(response.id,sessionId);
 
     return res.status(StatusCodes.OK).json({
         isNewUser: false,
@@ -195,7 +196,7 @@ const confirm_new_user = async (req, res, next) => {
         joined_rooms: 0,
     });
 
-    const sessionId = Store_SessionId_To_Cookie(res);
+    const sessionId = await Store_SessionId_To_Cookie(res,req);
 
     await Store_SessionId_to_redis(sessionId, createdUser.id, false)
 
