@@ -1,8 +1,21 @@
 services:
-  backend:
+  backend1:
     build: ./backend
     ports:
       - "3000:3000"
+    environment:
+      - PORT=3000
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - redis
+
+  backend2:
+    build: ./backend
+    ports:
+      - "3001:3000"
+    environment:
+      - PORT=3000
+      - REDIS_URL=redis://redis:6379
     depends_on:
       - redis
 
@@ -16,7 +29,7 @@ services:
     container_name: redis
     ports:
       - "6379:6379"
-    command: ["redis-server", "--appendonly", "yes"]
+    command: [ "redis-server", "--appendonly", "yes" ]
     volumes:
       - redis-data:/data
 
