@@ -1,0 +1,992 @@
+﻿docker :  Image administrative_platform-frontend Building 
+At line:1 char:1
++ docker compose up --build --abort-on-container-exit > .compose_output ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ( Image administ...ntend Building  
+   :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+ Image administrative_platform-backend1 Building 
+ Image administrative_platform-backend2 Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.86kB done
+#1 DONE 0.0s
+
+#2 [frontend internal] load build definition from Dockerfile
+#2 transferring dockerfile: 167B 0.0s done
+#2 DONE 0.1s
+
+#3 [backend2 internal] load build definition from Dockerfile
+#3 transferring dockerfile: 160B 0.0s done
+#3 DONE 0.1s
+
+#4 [frontend internal] load metadata for docker.io/library/node:22
+#4 DONE 1.0s
+
+#5 [frontend internal] load .dockerignore
+#5 transferring context: 2B done
+#5 DONE 0.0s
+
+#6 [backend2 internal] load .dockerignore
+#6 transferring context: 2B done
+#6 DONE 0.0s
+
+#7 [frontend 1/5] FROM docker.io/library/node:22@sha256:c79fafdee4a8e1d4f24ce349135098fa5b141e0f3d177f825ecc5775398b0449
+#7 resolve docker.io/library/node:22@sha256:c79fafdee4a8e1d4f24ce349135098fa5b141e0f3d177f825ecc5775398b0449 0.0s done
+#7 DONE 0.1s
+
+#8 [backend2 internal] load build context
+#8 ...
+
+#9 [frontend internal] load build context
+#9 transferring context: 358.88kB 0.7s done
+#9 DONE 0.7s
+
+#10 [frontend 4/5] RUN npm install
+#10 CACHED
+
+#11 [frontend 2/5] WORKDIR /app
+#11 CACHED
+
+#12 [frontend 3/5] COPY package*.json ./
+#12 CACHED
+
+#13 [frontend 5/5] COPY . .
+#13 CACHED
+
+#8 [backend2 internal] load build context
+#8 transferring context: 383.71kB 0.8s done
+#8 DONE 0.9s
+
+#11 [backend2 2/5] WORKDIR /app
+#11 CACHED
+
+#14 [backend2 3/5] COPY package*.json ./
+#14 CACHED
+
+#15 [backend2 4/5] RUN npm install
+#15 CACHED
+
+#16 [frontend] exporting to image
+#16 exporting layers 0.0s done
+#16 exporting manifest sha256:3de39add57661f2ccd78ab046950de3915d5d95e100e486cc90cfd7be6d3536f done
+#16 exporting config sha256:4bf2256a0ddac3375ca946c8d03ab763a9d09d468783f42436d38bbc64622be8 done
+#16 exporting attestation manifest sha256:980ed44dc1a2726f2ef5628da456d9dba8d105d6c2a7ace799370a0254935254 0.1s done
+#16 exporting manifest list sha256:529ab63e29bc695cf3ca4c57501bdabb5264c7477ba2148466f63a42f8eff57a 0.0s done
+#16 naming to docker.io/library/administrative_platform-frontend:latest
+#16 naming to docker.io/library/administrative_platform-frontend:latest done
+#16 unpacking to docker.io/library/administrative_platform-frontend:latest 0.0s done
+#16 DONE 0.3s
+
+#17 [backend2 5/5] COPY . .
+#17 ...
+
+#18 [frontend] resolving provenance for metadata file
+#18 DONE 0.0s
+
+#17 [backend2 5/5] COPY . .
+#17 DONE 1.9s
+
+#19 [backend2] exporting to image
+#19 exporting layers 2.2s done
+#19 exporting manifest sha256:3a5bf308b83d1b96c864d38e5e83a63f98487e7ba497b11dab593b232902dc20 0.0s done
+#19 exporting config sha256:6cb3dc4a459c94ddb1d09966bf32d2049e61499e71f6589e7dd46f7fdf1bfbe1 0.0s done
+#19 exporting attestation manifest sha256:7b41fa261f9199904e9bf3a5fe4ed37337d1fdbdd3c734eb3b6fa8ba3033e2b5
+#19 exporting attestation manifest sha256:7b41fa261f9199904e9bf3a5fe4ed37337d1fdbdd3c734eb3b6fa8ba3033e2b5 0.0s done
+#19 exporting manifest list sha256:7d77e8b3afb80ce6c422868c36c62eb250fb220ec05c11076f6b0a3b295e16e3 0.0s done
+#19 naming to docker.io/library/administrative_platform-backend2:latest done
+#19 unpacking to docker.io/library/administrative_platform-backend2:latest
+#19 unpacking to docker.io/library/administrative_platform-backend2:latest 1.4s done
+#19 DONE 3.9s
+
+#20 [backend1] exporting to image
+#20 exporting layers 2.2s done
+#20 exporting manifest sha256:715831f645b41585ffd13f1b8c982a33202274639d3c1469fd9c1debfd19eef0 0.0s done
+#20 exporting config sha256:347537f5c4aea93d2494d912854f45fd7d6184cf575218e6f996de42b467e960 0.0s done
+#20 exporting attestation manifest sha256:8d39886368c234c7a1568fe0656b872c8e320763b9f0fcaec06ad5b395dc8a80 0.0s done
+#20 exporting manifest list sha256:b463e068166824b92fad106f775eaaecff754a44e6e439ffec5f46a591d5c1d4 0.0s done
+#20 naming to docker.io/library/administrative_platform-backend1:latest 0.0s done
+#20 unpacking to docker.io/library/administrative_platform-backend1:latest 1.4s done
+#20 DONE 3.9s
+
+#21 [backend2] resolving provenance for metadata file
+#21 DONE 0.1s
+
+#22 [backend1] resolving provenance for metadata file
+#22 DONE 0.0s
+ Image administrative_platform-backend2 Built 
+ Image administrative_platform-frontend Built 
+ Image administrative_platform-backend1 Built 
+time="2026-06-11T22:34:32+05:30" level=warning msg="Found orphan containers 
+([administrative_platform-backend-1]) for this project. If you removed or 
+renamed this service in your compose file, you can run this command with the 
+--remove-orphans flag to clean it up."
+ Container redis Running 
+ Container administrative_platform-backend2-1 Recreate 
+ Container administrative_platform-frontend-1 Recreate 
+ Container administrative_platform-backend1-1 Recreate 
+ Container administrative_platform-frontend-1 Recreated 
+ Container administrative_platform-backend1-1 Recreated 
+ Container administrative_platform-backend2-1 Recreated 
+Attaching to backend1-1, backend2-1, frontend-1, redis
+ Container administrative_platform-frontend-1 Starting 
+ Container administrative_platform-backend2-1 Starting 
+ Container administrative_platform-backend1-1 Starting 
+ Container administrative_platform-backend1-1 Started 
+ Container administrative_platform-frontend-1 Started 
+ Container administrative_platform-backend2-1 Started 
+backend1-1  | 
+backend1-1  | > backend@1.0.0 start
+backend1-1  | > node src/index.js
+backend1-1  | 
+frontend-1  | 
+frontend-1  | > frontend@0.0.0 dev
+frontend-1  | > vite --host 0.0.0.0
+frontend-1  | 
+backend2-1  | 
+backend2-1  | > backend@1.0.0 start
+backend2-1  | > node src/index.js
+backend2-1  | 
+frontend-1  | 5:04:37 PM [vite] (client) Re-optimizing dependencies because lockfile has changed
+frontend-1  | 
+frontend-1  |   VITE v8.0.16  ready in 799 ms
+frontend-1  | 
+frontend-1  |   Γ₧£  Local:   http://localhost:5173/
+frontend-1  |   Γ₧£  Network: http://172.18.0.4:5173/
+backend1-1  | Γùç injected env (0) from .env // tip: Γùê encrypted .env [www.dotenvx.com]
+backend1-1  | listning on port 3000
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | Γùç injected env (0) from .env // tip: Γîü auth for agents [www.vestauth.com]
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | listning on port 3000
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend1-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend1-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+backend2-1  | [ioredis] Unhandled error event: Error: connect ECONNREFUSED 
+127.0.0.1:6379
+backend2-1  |     at TCPConnectWrap.afterConnect [as oncomplete] 
+(node:net:1637:16)
+

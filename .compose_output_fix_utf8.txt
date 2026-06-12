@@ -1,0 +1,193 @@
+﻿docker :  Image administrative_platform-backend1 Building 
+At line:1 char:39
++ ... ve-orphans; docker compose up --build --abort-on-container-exit > .co ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ( Image administ...kend1 Building  
+   :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+ Image administrative_platform-backend2 Building 
+ Image administrative_platform-frontend Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.86kB done
+#1 DONE 0.0s
+
+#2 [frontend internal] load build definition from Dockerfile
+#2 transferring dockerfile: 167B 0.0s done
+#2 DONE 0.1s
+
+#3 [backend2 internal] load build definition from Dockerfile
+#3 transferring dockerfile: 160B 0.0s done
+#3 DONE 0.1s
+
+#4 [auth] library/node:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#5 [backend1 internal] load metadata for docker.io/library/node:22
+#5 DONE 1.4s
+
+#6 [frontend internal] load .dockerignore
+#6 transferring context: 2B 0.0s done
+#6 DONE 0.0s
+
+#7 [backend2 internal] load .dockerignore
+#7 transferring context: 2B 0.0s done
+#7 DONE 0.1s
+
+#8 [backend1 1/5] FROM docker.io/library/node:22@sha256:c79fafdee4a8e1d4f24ce349135098fa5b141e0f3d177f825ecc5775398b0449
+#8 resolve docker.io/library/node:22@sha256:c79fafdee4a8e1d4f24ce349135098fa5b141e0f3d177f825ecc5775398b0449
+#8 resolve docker.io/library/node:22@sha256:c79fafdee4a8e1d4f24ce349135098fa5b141e0f3d177f825ecc5775398b0449 0.1s done
+#8 DONE 0.1s
+
+#9 [backend2 internal] load build context
+#9 ...
+
+#10 [frontend internal] load build context
+#10 transferring context: 358.88kB 0.9s done
+#10 DONE 0.9s
+
+#11 [frontend 4/5] RUN npm install
+#11 CACHED
+
+#12 [frontend 2/5] WORKDIR /app
+#12 CACHED
+
+#13 [frontend 3/5] COPY package*.json ./
+#13 CACHED
+
+#14 [frontend 5/5] COPY . .
+#14 CACHED
+
+#9 [backend2 internal] load build context
+#9 transferring context: 385.68kB 1.0s done
+#9 DONE 1.0s
+
+#15 [backend2 3/5] COPY package*.json ./
+#15 CACHED
+
+#12 [backend2 2/5] WORKDIR /app
+#12 CACHED
+
+#16 [backend2 4/5] RUN npm install
+#16 CACHED
+
+#17 [frontend] exporting to image
+#17 exporting layers 0.0s done
+#17 exporting manifest sha256:3de39add57661f2ccd78ab046950de3915d5d95e100e486cc90cfd7be6d3536f done
+#17 exporting config sha256:4bf2256a0ddac3375ca946c8d03ab763a9d09d468783f42436d38bbc64622be8 done
+#17 exporting attestation manifest sha256:f0ab00ff377663089f71ba95d541dc6e88608c4cf1fe676df83fea9d263c0fa0 0.1s done
+#17 exporting manifest list sha256:bd0fccfd54eb57b5012bd55c674fb505308619eea090b4587b2736e19c18e715 0.0s done
+#17 naming to docker.io/library/administrative_platform-frontend:latest done
+#17 unpacking to docker.io/library/administrative_platform-frontend:latest 0.0s done
+#17 DONE 0.3s
+
+#18 [backend2 5/5] COPY . .
+#18 ...
+
+#19 [frontend] resolving provenance for metadata file
+#19 DONE 0.0s
+
+#18 [backend2 5/5] COPY . .
+#18 DONE 1.6s
+
+#20 [backend2] exporting to image
+#20 exporting layers 2.3s done
+#20 exporting manifest sha256:987305c2fb7ae661fe6accb48ffcf00ffdb0cad9daa921a9d449b7f003dbe31d 0.0s done
+#20 exporting config sha256:35e7887e45043f66fd4f67cd216aa09ec1987f89b4424214b7dfc614f61c8f77 0.0s done
+#20 exporting attestation manifest sha256:05586e8947a9b29f369eec59e3e786ccafcdff8ae1e5c233065c7e422bfecc8e
+#20 exporting attestation manifest sha256:05586e8947a9b29f369eec59e3e786ccafcdff8ae1e5c233065c7e422bfecc8e 0.1s done
+#20 exporting manifest list sha256:3121fbd2acd7ac1defb212360609f4d8b33b6e42cead0b535bbf904c08b3f9b6 0.0s done
+#20 naming to docker.io/library/administrative_platform-backend2:latest
+#20 naming to docker.io/library/administrative_platform-backend2:latest 0.0s done
+#20 unpacking to docker.io/library/administrative_platform-backend2:latest
+#20 unpacking to docker.io/library/administrative_platform-backend2:latest 1.5s done
+#20 DONE 4.1s
+
+#21 [backend1] exporting to image
+#21 exporting layers 2.3s done
+#21 exporting manifest sha256:d153b89ac95e9e91d146e39c81a921887683b4dc26d4c2f2421c71597cd00e86 0.0s done
+#21 exporting config sha256:efd348da6ff62841bc82a54cdd41c7873db7bbe89bfed6172671a1da063f0c45 0.0s done
+#21 exporting attestation manifest sha256:b8338d53b82715b1215c2fbac1f9a922f4f5dd49c2b4629388f1cd47c16df6bf 0.1s done
+#21 exporting manifest list sha256:a66558081826e8f5f168173fb25a0a2a3207dc65a86eeab47162b723d06e2c49 0.0s done
+#21 naming to docker.io/library/administrative_platform-backend1:latest done
+#21 unpacking to docker.io/library/administrative_platform-backend1:latest 1.5s done
+#21 DONE 4.1s
+
+#22 [backend2] resolving provenance for metadata file
+#22 DONE 0.1s
+
+#23 [backend1] resolving provenance for metadata file
+#23 DONE 0.1s
+ Image administrative_platform-backend1 Built 
+ Image administrative_platform-backend2 Built 
+ Image administrative_platform-frontend Built 
+ Network administrative_platform_default Creating 
+ Network administrative_platform_default Created 
+ Container redis Creating 
+ Container administrative_platform-frontend-1 Creating 
+ Container administrative_platform-frontend-1 Created 
+ Container redis Created 
+ Container administrative_platform-backend2-1 Creating 
+ Container administrative_platform-backend1-1 Creating 
+ Container administrative_platform-backend1-1 Created 
+ Container administrative_platform-backend2-1 Created 
+Attaching to backend1-1, backend2-1, frontend-1, redis
+ Container redis Starting 
+ Container administrative_platform-frontend-1 Starting 
+redis  | 1:C 11 Jun 2026 17:11:10.282 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+redis  | 1:C 11 Jun 2026 17:11:10.282 * Redis version=7.4.9, bits=64, commit=00000000, modified=0, pid=1, just started
+redis  | 1:C 11 Jun 2026 17:11:10.282 * Configuration loaded
+redis  | 1:M 11 Jun 2026 17:11:10.282 * monotonic clock: POSIX clock_gettime
+redis  | 1:M 11 Jun 2026 17:11:10.283 * Running mode=standalone, port=6379.
+redis  | 1:M 11 Jun 2026 17:11:10.284 * Server initialized
+redis  | 1:M 11 Jun 2026 17:11:10.284 * Reading RDB base file on AOF loading...
+redis  | 1:M 11 Jun 2026 17:11:10.284 * Loading RDB produced by version 7.4.9
+redis  | 1:M 11 Jun 2026 17:11:10.284 * RDB age 869000 seconds
+redis  | 1:M 11 Jun 2026 17:11:10.284 * RDB memory usage when created 0.90 Mb
+redis  | 1:M 11 Jun 2026 17:11:10.284 * RDB is base AOF
+redis  | 1:M 11 Jun 2026 17:11:10.284 * Done loading RDB, keys loaded: 0, keys expired: 0.
+redis  | 1:M 11 Jun 2026 17:11:10.284 * DB loaded from base file appendonly.aof.1.base.rdb: 0.000 seconds
+redis  | 1:M 11 Jun 2026 17:11:10.296 * DB saved on disk
+redis  | 1:M 11 Jun 2026 17:11:10.304 * DB saved on disk
+ Container redis Started 
+ Container administrative_platform-backend2-1 Starting 
+ Container administrative_platform-backend1-1 Starting 
+redis  | 1:M 11 Jun 2026 17:11:10.319 * DB saved on disk
+redis  | 1:M 11 Jun 2026 17:11:10.335 * DB saved on disk
+redis  | 1:M 11 Jun 2026 17:11:10.353 * DB saved on disk
+redis  | 1:M 11 Jun 2026 17:11:10.366 * DB saved on disk
+ Container administrative_platform-frontend-1 Started 
+redis  | 1:M 11 Jun 2026 17:11:10.379 * DB saved on disk
+redis  | 1:M 11 Jun 2026 17:11:10.385 * DB saved on disk
+redis  | 1:M 11 Jun 2026 17:11:10.397 * DB saved on disk
+redis  | 1:M 11 Jun 2026 17:11:10.398 * DB loaded from incr file appendonly.aof.1.incr.aof: 0.114 seconds
+redis  | 1:M 11 Jun 2026 17:11:10.398 * DB loaded from append only file: 0.114 seconds
+redis  | 1:M 11 Jun 2026 17:11:10.398 * Opening AOF incr file appendonly.aof.1.incr.aof on server start
+redis  | 1:M 11 Jun 2026 17:11:10.398 * Ready to accept connections tcp
+frontend-1  | 
+frontend-1  | > frontend@0.0.0 dev
+frontend-1  | > vite --host 0.0.0.0
+frontend-1  | 
+ Container administrative_platform-backend1-1 Started 
+ Container administrative_platform-backend2-1 Started 
+backend1-1  | 
+backend1-1  | > backend@1.0.0 start
+backend1-1  | > node src/index.js
+backend1-1  | 
+backend2-1  | 
+backend2-1  | > backend@1.0.0 start
+backend2-1  | > node src/index.js
+backend2-1  | 
+frontend-1  | 5:11:11 PM [vite] (client) Re-optimizing dependencies because lockfile has changed
+frontend-1  | 
+frontend-1  |   VITE v8.0.16  ready in 689 ms
+frontend-1  | 
+frontend-1  |   Γ₧£  Local:   http://localhost:5173/
+frontend-1  |   Γ₧£  Network: http://172.18.0.3:5173/
+backend2-1  | Γùç injected env (0) from .env // tip: Γùê encrypted .env [www.dotenvx.com]
+backend2-1  | Γùç injected env (0) from .env // tip: Γîÿ suppress logs { quiet: true }
+backend1-1  | Γùç injected env (0) from .env // tip: Γîÿ enable debugging { debug: true }
+backend1-1  | Γùç injected env (0) from .env // tip: Γîÿ suppress logs { quiet: true }
+backend2-1  | listning on port 3000
+backend1-1  | listning on port 3000
+

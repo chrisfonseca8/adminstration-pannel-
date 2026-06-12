@@ -33,7 +33,19 @@ const LoginPage = () => {
           });
           return;
         }
+        const ws = new WebSocket("ws://localhost:3000/ws");
 
+        ws.onopen = () => {
+          console.log("WebSocket connected");
+        };
+
+        ws.onmessage = (event) => {
+          console.log(JSON.parse(event.data));
+        };
+
+        ws.onerror = (err) => {
+          console.error(err);
+        };
         navigate('/dashboard');
       } catch (error) {
         setError(error?.response?.data?.message || 'Google login failed');
